@@ -11,8 +11,8 @@ require_once _TEMPLATEPATH_ . '/header.php';
         <img src="uploads/books/3-zai-zai-zai-zai.jpg" class="d-block mx-lg-auto img-fluid" alt="Zaï Zaï Zaï Zaï">
     </div>
     <div class="col-lg-4">
-        <h1 class="display-5 fw-bold lh-1 mb-3">Zaï Zaï Zaï Zaï</h1>
-        <p class="lead">Au passage à la caisse d'un supermarché, un auteur de bande dessinée réalise qu’il n’a pas sa carte de fidélité. Le vigile intervient à la demande de la caissière mais l’auteur le menace avec un poireau puis parvient à s’enfuir.</p>
+        <h1 class="display-5 fw-bold lh-1 mb-3"><?= $book->getTitle();?></h1>
+        <p class="lead"><?= $book->getDescription();?></p>
     </div>
     <div class="col-md-12 col-lg-4 col-xl-4">
         <?php if (User::isLogged() && User::isAdmin()) { ?>

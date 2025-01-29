@@ -36,7 +36,11 @@ class BookRepository extends Repository
     public function findAll(int $limit = null, int $page = null): array
     {
         //@todo start with a simple query then manage pagination
-        
+        $pdo = Database::getInstance()->getPDO();
+        $query = $pdo->prepare("SELECT * FROM director");
+        $query->execute();
+
+        $directors = $query->fetchAll(PDO::FETCH_ASSOC);
 
         $booksArray = [];
 
